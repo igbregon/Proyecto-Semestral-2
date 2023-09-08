@@ -30,8 +30,13 @@ export class InicioPage implements OnInit {
     }
     
     if (this.email == "pgy4121-003d" && this.contrasena == "pgy4121-003d") {
-      //alert("Login correcto.");
+      this.funcionesService.showAlertNoButton("Validando credenciales...", "");
+
+    setTimeout(() => {
+      
+      this.funcionesService.showAlert("Bienvenido a TeLlevoAPP.", "");
       this.router.navigateByUrl("menu");
+    }, 2000);
     }else{
       this.funcionesService.showAlert("Credenciales inválidas.","Error");
     }
@@ -45,4 +50,7 @@ export class InicioPage implements OnInit {
   Recuperar(){
     this.router.navigateByUrl("recuperacion");
   }
+
+  
+
 }
