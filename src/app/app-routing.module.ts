@@ -25,23 +25,23 @@ const routes: Routes = [
   },
   {
     path: 'menu',
-    loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule)
+    loadChildren: () => import('./pages/main/menu/menu.module').then( m => m.MenuPageModule)
   },
   {
     path: 'viajes-disponibles',
-    loadChildren: () => import('./pages/viajes-disponibles/viajes-disponibles.module').then( m => m.ViajesDisponiblesPageModule)
+    loadChildren: () => import('./pages/main/viajes-disponibles/viajes-disponibles.module').then( m => m.ViajesDisponiblesPageModule)
   },
   {
     path: 'crear-viaje',
-    loadChildren: () => import('./pages/crear-viaje/crear-viaje.module').then( m => m.CrearViajePageModule)
+    loadChildren: () => import('./pages/main/crear-viaje/crear-viaje.module').then( m => m.CrearViajePageModule)
   },
   {
     path: 'detalle-viaje/:id',
-    loadChildren: () => import('./pages/detalle-viaje/detalle-viaje.module').then( m => m.DetalleViajePageModule)
+    loadChildren: () => import('./pages/main/detalle-viaje/detalle-viaje.module').then( m => m.DetalleViajePageModule)
   },
   {
     path: 'registrar-vehiculo',
-    loadChildren: () => import('./pages/registrar-vehiculo/registrar-vehiculo.module').then( m => m.RegistrarVehiculoPageModule)
+    loadChildren: () => import('./pages/main/registrar-vehiculo/registrar-vehiculo.module').then( m => m.RegistrarVehiculoPageModule)
   },
 ];
 
