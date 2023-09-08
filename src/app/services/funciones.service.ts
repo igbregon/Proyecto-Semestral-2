@@ -22,6 +22,7 @@ export class FuncionesService {
     return alert;
   }
 
+
   async showAlertNoButton(msg:string,title:string){
     var alert = await this.alertService.create({cssClass:"alertClass",header:title,message:msg})
     await alert.present();

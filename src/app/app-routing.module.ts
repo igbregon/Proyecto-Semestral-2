@@ -36,7 +36,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/crear-viaje/crear-viaje.module').then( m => m.CrearViajePageModule)
   },
   {
-    path: 'detalle-viaje',
+    path: 'detalle-viaje/:id',
     loadChildren: () => import('./pages/detalle-viaje/detalle-viaje.module').then( m => m.DetalleViajePageModule)
   },
   {
