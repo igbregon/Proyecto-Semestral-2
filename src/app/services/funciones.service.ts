@@ -22,6 +22,16 @@ export class FuncionesService {
     return alert;
   }
 
+  async showAlertNoButton(msg:string,title:string){
+    var alert = await this.alertService.create({cssClass:"alertClass",header:title,message:msg})
+    await alert.present();
+
+    setTimeout(() => {
+      alert.dismiss();
+    }, 2000);
+
+    return alert;
+  }
 
   async showConfirm(msg:string,btn_confirmar:string,btn_cancelar:string){
     let promise = new Promise<boolean>(async (resolve) =>
@@ -51,6 +61,8 @@ export class FuncionesService {
     return promise;
   }
 
+
+  
 
 
   async showLoading(msg:string){
