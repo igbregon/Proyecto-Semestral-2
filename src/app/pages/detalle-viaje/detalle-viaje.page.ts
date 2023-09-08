@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalle-viaje',
@@ -8,13 +8,20 @@ import { Router } from '@angular/router';
 })
 export class DetalleViajePage implements OnInit {
 
-  constructor(private router:Router) { }
+  patente:string | undefined;
+
+  constructor(
+    private router:Router,
+    private activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
+    this.patente = this.activatedRoute.snapshot.params['id'];
+    console.log("patente: ", this.patente);
   }
 
   Volver() {
     this.router.navigateByUrl("viajes-disponibles");
   }
+
 
 }
