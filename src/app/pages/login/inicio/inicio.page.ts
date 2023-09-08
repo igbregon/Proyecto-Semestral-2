@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FuncionesService } from 'src/app/services/funciones.service';
 
 @Component({
   selector: 'app-inicio',
@@ -11,26 +12,28 @@ export class InicioPage implements OnInit {
   email:string = "";
   contrasena:string = "";
 
-  constructor(private router:Router) { }
+  constructor(
+    private router:Router,
+    private funcionesService:FuncionesService) { }
 
   ngOnInit() {
   }
 
   login(){
     if (this.email == "") {
-      alert("Debe ingresar un email.");
+      this.funcionesService.showAlert("Debe ingresar un email.","Error");
       return;
     }
     if (this.contrasena == "") {
-      alert("Debe ingresar una contraseña.")
+      this.funcionesService.showAlert("Debe ingresar una contraseña.","Error");
       return;
     }
     
-    if (this.email == "micorreo" && this.contrasena == "123") {
+    if (this.email == "pgy4121-003d" && this.contrasena == "pgy4121-003d") {
       //alert("Login correcto.");
       this.router.navigateByUrl("menu");
     }else{
-      alert("Crdeneciales no validas.");
+      this.funcionesService.showAlert("Credenciales inválidas.","Error");
     }
     
   }
