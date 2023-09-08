@@ -22,7 +22,6 @@ export class FuncionesService {
     return alert;
   }
 
-
   async showConfirm(msg:string,btn_confirmar:string,btn_cancelar:string){
     let promise = new Promise<boolean>(async (resolve) =>
     {
