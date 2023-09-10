@@ -29,7 +29,7 @@ export class FuncionesService {
 
     setTimeout(() => {
       alert.dismiss();
-    }, 2000);
+    }, 1000);
 
     return alert;
   }

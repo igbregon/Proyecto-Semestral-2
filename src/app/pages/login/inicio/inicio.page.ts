@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { FuncionesService } from 'src/app/services/funciones.service';
 
@@ -14,12 +15,13 @@ export class InicioPage implements OnInit {
 
   constructor(
     private router:Router,
+    private auth: AngularFireAuth,
     private funcionesService:FuncionesService) { }
 
   ngOnInit() {
   }
 
-  login(){
+/*   login(){
     if (this.email == "") {
       this.funcionesService.showAlert("Debe ingresar un email.","Error");
       return;
@@ -41,6 +43,27 @@ export class InicioPage implements OnInit {
       this.funcionesService.showAlert("Credenciales inválidas.","Error");
     }
     
+  } */
+
+  async login(){
+    if (this.email === "" || this.contrasena === "") {
+      this.funcionesService.showAlert("Debe ingresar un email y una contraseña.", "ERROR");
+      return;
+    }
+
+    try {
+      await this.auth.signInWithEmailAndPassword(this.email, this.contrasena);
+      this.funcionesService.showAlertNoButton("Validando credenciales...", "");
+    } catch (error) {
+      this.funcionesService.showAlert("Usuario y contraseña no válidos.", "ERROR");
+    }
+
+    setTimeout(() => {
+      
+      this.funcionesService.showAlert("Bienvenido a TeLlevoAPP.", "");
+      this.router.navigateByUrl("menu");
+    }, 1000);
+
   }
 
   Registro(){

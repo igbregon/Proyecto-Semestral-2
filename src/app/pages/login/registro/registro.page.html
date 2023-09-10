@@ -25,7 +25,7 @@
 			<div class="mt-2 ">
 				<label for="" class="dark:text-white text-base font-normal">Correo electrónico</label>
 				<div class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg  ">
-				<input type="text" name="" placeholder="" id=""
+				<input type="text" name="emailtxt" placeholder="" id="" [(ngModel)]="email"
 										class="w-full dark:text-white dark:placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg">
 								</div>
 				</div>
@@ -36,17 +36,24 @@
 										class="w-full dark:text-white dark:placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg">
 								</div>
 				</div>
-				<div class="mt-6 ">
+			<div class="mt-6 ">
 				<label for="" class="dark:text-white text-base font-normal">Contraseña</label>
 				<div class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg  ">
-					<input  type="password" name="" placeholder="" id=""
+					<input  type="password" name="passwordtxt" placeholder="" id="" [(ngModel)]="contrasena"
 										class="w-full dark:text-white placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg">
-								</div>
 				</div>
+			</div>
+			<div class="mt-6 ">
+				<label for="" class="dark:text-white text-base font-normal">Confirmar Contraseña</label>
+				<div class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg  ">
+					<input  type="password" name="confirmpasswordtxt" placeholder="" id="" [(ngModel)]="confirmarContrasena"
+										class="w-full dark:text-white placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg">
+					</div>
+			</div>
 				<div class="relative flex items-center mt-8">
 					<div class="border h-0 w-full border-stone-300"></div>
 				</div>
-				<button class="bg-[#ffbd59] rounded-lg shadow text-center text-white text-base font-semibold w-full py-3 mt-9">Registrarse</button>
+				<button (click)="registro()" class="bg-[#ffbd59] rounded-lg shadow text-center text-white text-base font-semibold w-full py-3 mt-9">Registrarse</button>
 			</form>
 		</div>
 		</div>
