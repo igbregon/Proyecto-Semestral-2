@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registrar-vehiculo',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrarVehiculoPage implements OnInit {
 
-  constructor() { }
+  marca: string = "";
+  modelo: string = "";
+  anno: number = 0;
+  patente: string = "";
+  img: string = "";
+
+  constructor(
+    private navController: NavController
+    ) { }
 
   ngOnInit() {
+  }
+
+  volver(){
+    this.navController.back();
   }
 
 }

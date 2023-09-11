@@ -1,42 +1,71 @@
 <ion-content [fullscreen]="true">
+    <div class="h-full w-full">
+        <div class="h-full w-full dark:bg-slate-900">
+            <div class="bg-[#ffbd59] py-16">
+                <h1 class="text-center text-white font-sans font-bold text-4xl">
+                    ¡Bienvenido!
+                </h1>
+            </div>
+            <div class="mt-10 max-w-xl m-auto px-10">
+                <div class="mt-2">
+                    <label for="" class="dark:text-white text-base font-normal"
+                        >Nombre de usuario:</label
+                    >
+                    <div
+                        class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg"
+                    >
+                        <input
+                            type="text"
+                            name="texto1"
+                            placeholder=""
+                            id=""
+                            [(ngModel)]="email"
+                            class="w-full dark:text-white dark:placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg"
+                        />
+                    </div>
+                </div>
 
-	<div class="h-full w-full">
-		<div class="h-full w-full dark:bg-slate-900">
-			<div class="bg-[#ffbd59] py-16">
-				<h1 class="text-center text-white font-sans font-bold text-4xl">¡Bienvenido!</h1>
-			</div>
-			<div class="mt-10 max-w-xl m-auto px-10">
-			
-					<div class="mt-2">
-					<label for="" class="dark:text-white text-base font-normal">Nombre de usuario:</label>
-					<div class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg  ">
-						<input type="text" name="texto1" placeholder="" id="" [(ngModel)]="email"
-								class="w-full dark:text-white dark:placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg">
-						</div>
-					</div>
+                <div class="mt-6">
+                    <label for="" class="dark:text-white text-base font-normal"
+                        >Contraseña:</label
+                    >
+                    <div
+                        class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg"
+                    >
+                        <input
+                            type="password"
+                            name="texto2"
+                            placeholder=""
+                            id=""
+                            [(ngModel)]="contrasena"
+                            class="w-full dark:text-white placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg"
+                        />
+                    </div>
+                </div>
+                <a
+                    (click)="Recuperar()"
+                    class="mt-6 text-[#ffbd59] flex justify-end text-sm font-normal underline"
+                    >¿Olvidaste tu contraseña?</a
+                >
+                <button
+                    (click)="login()"
+                    class="bg-[#ffbd59] rounded-lg shadow text-center text-white text-base font-semibold w-full py-3 mt-9"
+                >
+                    Iniciar sesión
+                </button>
 
-					<div class="mt-6 ">
-					<label for="" class="dark:text-white text-base font-normal">Contraseña:</label>
-					<div class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg  ">
-						<input  type="password" name="texto2" placeholder="" id="" [(ngModel)]="contrasena"
-							class="w-full dark:text-white placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg">
-					</div>
-
-					</div>
-					<a (click)="Recuperar()"
-						class="mt-6 text-[#ffbd59] flex justify-end text-sm font-normal underline">¿Olvidaste tu contraseña?</a>
-					<button  (click)="login()"
-					class="bg-[#ffbd59] rounded-lg shadow text-center text-white text-base font-semibold w-full py-3 mt-9" >Iniciar sesión</button>
-
-					<div class="relative flex items-center mt-8">
-						<div class="border h-0 w-2/4 border-stone-300"></div>
-						<div class=" text-stone-300 px-4 text-sm font-normal">O</div>
-						<div class=" border h-0 w-2/4 border-stone-300"></div>
-					</div>
-					<button (click)="Registro()"
-					class="border border-indigo-900 rounded-lg  text-center  text-[#ffbd59] bg-slate-900 dark:bg-white text-base font-semibold w-full py-3 mt-9"  >Registrate</button>
-			</div>
-		</div>
-	</div>
-
+                <div class="relative flex items-center mt-8">
+                    <div class="border h-0 w-2/4 border-stone-300"></div>
+                    <div class="text-stone-300 px-4 text-sm font-normal">O</div>
+                    <div class="border h-0 w-2/4 border-stone-300"></div>
+                </div>
+                <button
+                    (click)="Registro()"
+                    class="border border-indigo-900 rounded-lg text-center text-[#ffbd59] bg-slate-900 dark:bg-white text-base font-semibold w-full py-3 mt-9"
+                >
+                    Registrate
+                </button>
+            </div>
+        </div>
+    </div>
 </ion-content>

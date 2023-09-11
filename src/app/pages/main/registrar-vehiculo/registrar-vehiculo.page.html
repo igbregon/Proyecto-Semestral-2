@@ -1,19 +1,88 @@
 <ion-content [fullscreen]="true">
-
-	<div class="h-full max-w-xl container mx-auto dark:bg-slate-900">
-		<div class="h-full w-full ">
-		<div class="bg-[#ffbd59] py-12">
-			<h1 class="text-center text-white font-sans font-bold text-4xl">Registro</h1>
-			<h2 class="text-center text-white font-sans font-light mt-2" >volver</h2>
-		</div>
-		<div class="mt-10 mx-8">
-			<div class="py-14 px-2 bg-[#09090b]">
-          <div class="container mx-4 my-4 bg-[#ffbd59]">
-
-          </div>
-      </div>
-		</div>
-		</div>
-	</div>
-
+    <div class="h-full dark:bg-slate-900">
+        <div class="h-full w-full">
+            <div class="bg-[#ffbd59] py-12">
+                <h1 class="text-center text-white font-sans font-bold text-4xl">
+                    Registrar vehículo
+                </h1>
+                <h2 
+                (click)="volver()"
+                class="text-center text-white font-sans font-light mt-2">
+                    volver
+                </h2>
+            </div>
+            <div class="mt-10">
+                <form action="" class="px-10 max-w-xl m-auto">
+                    <div class="mt-2">
+                        <label
+                            for="marca"
+                            class="dark:text-white text-base font-normal"
+                            >Marca</label
+                        >
+                        <div class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg">
+                            <input
+                                type="text"
+                                name="marca"
+                                placeholder="ingrese marca"
+                                class="w-full dark:text-white dark:placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg"
+                            />
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <label
+                            for="modelo"
+                            class="dark:text-white text-base font-normal"
+                            >Modelo</label
+                        >
+                        <div class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg">
+                            <input
+                                type="text"
+                                name="modelo"
+                                placeholder="ingrese modelo"
+                                class="w-full dark:text-white dark:placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg"
+                            />
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <label
+                            for="anno"
+                            class="dark:text-white text-base font-normal"
+                            >Año</label
+                        >
+                        <div class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg">
+                            <input
+                                type="text"
+                                name="anno"
+                                placeholder="Ingrese año ej: 2012"
+                                class="w-full dark:text-white dark:placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg"
+                            />
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <label
+                            for="patente"
+                            class="dark:text-white text-base font-normal"
+                            >Patente</label
+                        >
+                        <div class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg">
+                            <input
+                                type="text"
+                                name="patente"
+                                placeholder="Ingrese patente ej: HH-BB-41"
+                                class="w-full dark:text-white dark:placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg"
+                            />
+                        </div>
+                    </div>
+                    <div class="relative flex items-center mt-8">
+                        <div class="border h-0 w-full border-stone-300"></div>
+                    </div>
+                    <button
+                        class="bg-[#ffbd59] rounded-lg shadow text-center text-white text-base font-semibold w-full py-3 mt-9"
+                    >
+                        Registrar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 </ion-content>

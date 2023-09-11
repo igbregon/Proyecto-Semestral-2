@@ -26,6 +26,11 @@ export class CrearViajePage implements OnInit {
     
   }
 
+  registrarVehiculo(){
+    this.router.navigateByUrl("registrar-vehiculo");
+    
+  }
+
   calcularMultiplicacion(){
 
     if(this.n1 !== undefined && this.n2 !== undefined){

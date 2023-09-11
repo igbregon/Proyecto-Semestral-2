@@ -19,7 +19,8 @@ export class RegistroPage implements OnInit {
     private router: Router, 
     private navController: NavController,
     private funcionesService:FuncionesService,
-    private auth: AngularFireAuth) { }
+    private auth: AngularFireAuth
+    ) { }
 
   ngOnInit() {
   }

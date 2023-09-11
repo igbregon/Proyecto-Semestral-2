@@ -54,15 +54,16 @@ export class InicioPage implements OnInit {
     try {
       await this.auth.signInWithEmailAndPassword(this.email, this.contrasena);
       this.funcionesService.showAlertNoButton("Validando credenciales...", "");
+
+      setTimeout(() => {
+      
+        this.funcionesService.showAlert("Bienvenido a TeLlevoAPP.", "");
+        this.router.navigateByUrl("menu");
+      }, 1000);
+
     } catch (error) {
       this.funcionesService.showAlert("Usuario y contraseña no válidos.", "ERROR");
     }
-
-    setTimeout(() => {
-      
-      this.funcionesService.showAlert("Bienvenido a TeLlevoAPP.", "");
-      this.router.navigateByUrl("menu");
-    }, 1000);
 
   }
 

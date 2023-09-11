@@ -1,28 +1,49 @@
 <ion-content [fullscreen]="true">
+    <div class="h-full w-full dark:bg-slate-900">
+        <div class="h-full w-full">
+            <div class="bg-[#ffbd59] py-16">
+                <h1 class="text-center text-white font-sans font-bold text-4xl">
+                    Recuperar contraseña
+                </h1>
+                `
+                <h2
+                    class="text-center text-white font-sans font-light mt-2"
+                    (click)="Inicio()"
+                >
+                    volver
+                </h2>
+            </div>
+            <div class="mt-10 max-w-xl m-auto">
+                <form action="" class="px-10">
+                    <div class="mt-2">
+                        <label
+                            for=""
+                            class="dark:text-white text-base font-normal"
+                            >Correo electrónico</label
+                        >
+                        <div
+                            class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg"
+                        >
+                            <input
+                                type="text"
+                                name=""
+                                placeholder=""
+                                id=""
+                                class="w-full dark:text-white dark:placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg"
+                            />
+                        </div>
+                    </div>
+                    <div class="relative flex items-center mt-8">
+                        <div class="border h-0 w-full border-stone-300"></div>
+                    </div>
 
-	<div class="h-full w-full dark:bg-slate-900">
-		<div class="h-full w-full ">
-		<div class="bg-[#ffbd59] py-16">
-			<h1 class="text-center text-white font-sans font-bold text-4xl">Recuperar contraseña</h1>`
-			<h2 class="text-center text-white font-sans font-light mt-2" (click)="Inicio()">volver</h2>
-		</div>
-		<div class="mt-10 max-w-xl m-auto">
-			<form action="" class="px-10">
-			<div class="mt-2 ">
-				<label for="" class="dark:text-white text-base font-normal">Correo electrónico</label>
-				<div class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg  ">
-				<input type="text" name="" placeholder="" id=""
-										class="w-full dark:text-white dark:placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg">
-								</div>
-				</div>
-        <div class="relative flex items-center mt-8">
-					<div class="border h-0 w-full border-stone-300"></div>
-				</div>
-
-				<button class="bg-[#ffbd59] rounded-lg shadow text-center text-white text-base font-semibold w-full py-3 mt-9">Enviar</button>
-			</form>
-		</div>
-		</div>
-	</div>
-
+                    <button
+                        class="bg-[#ffbd59] rounded-lg shadow text-center text-white text-base font-semibold w-full py-3 mt-9"
+                    >
+                        Enviar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 </ion-content>
