@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnimationController, NavController } from '@ionic/angular';
 import type { Animation } from '@ionic/angular';
+import { FuncionesService } from 'src/app/services/funciones.service';
 
 @Component({
   selector: 'app-menu',
@@ -15,7 +16,8 @@ export class MenuPage implements OnInit {
   constructor(
     private router: Router, 
     private navController: NavController,
-    private animationCtrl: AnimationController) { }
+    private animationCtrl: AnimationController,
+    private funcionesService: FuncionesService) { }
 
 
 
@@ -32,13 +34,19 @@ export class MenuPage implements OnInit {
       .fromTo('opacity', '1', '0.2');
   }
   
-  Inicio(){
-    this.router.navigateByUrl("inicio");
+
+  async Inicio(){
+    //
+    var confirmar = await this.funcionesService.showConfirm("Desea cerrar la sesión actual?","Confirmar","Cancelar");
+    if (confirmar == true) {
+      await this.router.navigateByUrl("inicio");
+    }
   }
 
   BuscarViaje(){
     this.router.navigateByUrl("viajes-disponibles");
   }
+  
   CrearViaje(){
     this.router.navigateByUrl("crear-viaje");
   }

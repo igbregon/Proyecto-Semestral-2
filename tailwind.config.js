@@ -5,6 +5,9 @@ module.exports = {
     fontFamily: {
       'sans': ['Helvetica', 'Arial', 'sans-serif']
     },
+    colors: {
+      'amarillo-ppal': '#ffbd59'
+    },
     extend: {},
   },
   plugins: [require('@tailwindcss/aspect-ratio')
