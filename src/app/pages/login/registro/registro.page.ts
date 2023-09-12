@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import { FuncionesService } from 'src/app/services/funciones.service';
+import { FuncionesService } from 'src/app/services/alertas/funciones.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({

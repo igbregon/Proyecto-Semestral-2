@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { FuncionesService } from 'src/app/services/funciones.service';
+import { FuncionesService } from 'src/app/services/alertas/funciones.service';
 
 @Component({
   selector: 'app-inicio',

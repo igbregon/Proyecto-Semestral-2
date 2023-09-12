@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FuncionesService } from 'src/app/services/funciones.service';
+import { FuncionesService } from 'src/app/services/alertas/funciones.service';
 
 @Component({
   selector: 'app-crear-viaje',

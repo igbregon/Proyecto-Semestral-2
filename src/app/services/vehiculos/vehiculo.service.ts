@@ -41,9 +41,9 @@ export class VehiculoService {
     }
   ];
 
+  constructor() { }
+
   arrayVehiculos(){
     return this.vehiculos;
   }
-
-  constructor() { }
 }
