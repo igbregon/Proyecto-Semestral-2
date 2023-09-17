@@ -21,18 +21,20 @@
                         >
                             <img
                                 class="object-cover h-full"
-                                src="https://www.freeiconspng.com/thumbs/car-icon-png/car-icon-png-25.png"
+                                src="{{vehiculo.img}}"
                                 alt=""
                             />
                         </div>
                         <div class="px-4">
-                            <p class="text-black font-medium text-sm">Marca:</p>
                             <p class="text-black font-medium text-sm">
-                                Modelo:
+                                Marca: {{vehiculo.marca}}</p>
+                            <p class="text-black font-medium text-sm">
+                                Modelo: {{vehiculo.modelo}}
                             </p>
-                            <p class="text-black font-medium text-sm">Año:</p>
                             <p class="text-black font-medium text-sm">
-                                Patente: {{patente}}
+                                Año: {{vehiculo.anno}}</p>
+                            <p class="text-black font-medium text-sm">
+                                Patente: {{vehiculo.patente}}
                             </p>
                         </div>
                     </div>

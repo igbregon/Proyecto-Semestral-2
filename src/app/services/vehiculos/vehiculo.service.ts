@@ -46,4 +46,8 @@ export class VehiculoService {
   arrayVehiculos(){
     return this.vehiculos;
   }
+
+  getVehiculoByPatente(patente: string){
+    return this.vehiculos.find(vehiculo => vehiculo.patente === patente)
+  };
 }

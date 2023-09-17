@@ -25,7 +25,6 @@ export class ViajesDisponiblesPage implements OnInit {
   }
 
   Siguiente(id: string){
-
     this.router.navigateByUrl("detalle-viaje/" + id);
     console.log("recibo:" + id);
   }
