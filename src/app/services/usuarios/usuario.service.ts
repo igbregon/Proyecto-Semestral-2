@@ -36,4 +36,19 @@ export class UsuarioService {
 
   constructor() { }
 
+  getUsuarioByCorreo(correo: string){
+    return this.usuarios.find(usuario => usuario.correo === correo)
+  };
+
+  getUsuarioByID(id: number){
+    return this.usuarios.find(usuario => usuario.id === id)
+  };
+
+  getUsuarioNuevoID() {
+    return this.usuarios.length + 1;
+  }
+
+  setUsuarioNuevo(usuario: Usuario){
+    this.usuarios.push(usuario);
+  };
 }

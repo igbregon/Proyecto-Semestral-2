@@ -43,6 +43,7 @@ export class VehiculoService {
 
   constructor() { }
 
+  //método temporal hasta que cree el servicio de viajes disponibles
   arrayVehiculos(){
     return this.vehiculos;
   }

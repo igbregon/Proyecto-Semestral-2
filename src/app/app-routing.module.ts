@@ -24,7 +24,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/recuperacion/recuperacion.module').then( m => m.RecuperacionPageModule)
   },
   {
-    path: 'menu',
+    path: 'menu/:correo',
     loadChildren: () => import('./pages/main/menu/menu.module').then( m => m.MenuPageModule)
   },
   {
@@ -36,7 +36,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/main/crear-viaje/crear-viaje.module').then( m => m.CrearViajePageModule)
   },
   {
-    path: 'detalle-viaje/:id',
+    path: 'detalle-viaje/:patente',
     loadChildren: () => import('./pages/main/detalle-viaje/detalle-viaje.module').then( m => m.DetalleViajePageModule)
   },
   {

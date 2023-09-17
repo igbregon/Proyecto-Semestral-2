@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AnimationController, NavController } from '@ionic/angular';
 import type { Animation } from '@ionic/angular';
+import { Usuario } from 'src/app/models/usuario';
 import { FuncionesService } from 'src/app/services/alertas/funciones.service';
+import { UsuarioService } from 'src/app/services/usuarios/usuario.service';
 
 @Component({
   selector: 'app-menu',
@@ -12,16 +14,39 @@ import { FuncionesService } from 'src/app/services/alertas/funciones.service';
 export class MenuPage implements OnInit {
 
   private animation!: Animation;
+  usuario: Usuario = {
+    id: 0,
+    nombre: '',
+    apellido: '',
+    correo: '',
+    nickname: '',
+  } 
 
   constructor(
     private router: Router, 
     private navController: NavController,
     private animationCtrl: AnimationController,
-    private funcionesService: FuncionesService) { }
+    private funcionesService: FuncionesService,
+    private activatedRoute:ActivatedRoute,
+    private usuarioService: UsuarioService) { }
 
 
 
   ngOnInit() {
+  }
+
+  ionViewDidEnter(){
+    this.activatedRoute.params.subscribe(params => {
+      this.usuario.correo = params['correo'];
+      const usuarioCorreo = this.usuarioService.getUsuarioByCorreo(this.usuario.correo);
+      
+      //esto es para que no de error el angular por la posibildad de que no exista el objeto deseado
+      if (usuarioCorreo !== undefined) {
+        this.usuario = usuarioCorreo;
+      }else{
+        console.log("señorita con h");
+      }
+    });
   }
 
   ngAfterViewInit() {

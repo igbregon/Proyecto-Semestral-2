@@ -2,15 +2,20 @@
     <div class="h-fit min-h-full dark:bg-slate-900">
         <div class="h-full w-full">
             <div class="flex flex-col justify-between">
-                <div class="bg-[#ffbd59] py-12">
+                <div class="bg-[#ffbd59] py-10">
                     <h1 class="text-center text-white font-bold text-4xl">
-                        ¡Hola! @usuario
+                        ¡Hola! {{usuario.nombre}} {{usuario.apellido}}
                     </h1>
+                    <h2
+                    class="text-center text-white font-sans font-light italic mt-2"
+                    (click)="Inicio()"
+                >
+                    Cerrar sesión
+                </h2>
                 </div>
                 <div class="dark:bg-white bg-slate-900 py-1">
                     <h2
                         class="text-center text-white dark:text-black font-sans font-light italic mt-2"
-                        (click)="Inicio()"
                     >
                         ¿Que haremos hoy?
                     </h2>

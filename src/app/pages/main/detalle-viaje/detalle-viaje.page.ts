@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { Vehiculo } from 'src/app/models/vehiculo';
 import { VehiculoService } from 'src/app/services/vehiculos/vehiculo.service';
 
@@ -23,7 +24,8 @@ export class DetalleViajePage implements OnInit {
   constructor(
     private router:Router,
     private activatedRoute:ActivatedRoute,
-    private vehiculosService: VehiculoService) { }
+    private vehiculosService: VehiculoService,
+    private navController: NavController) { }
 
   ngOnInit() {
     /* acá dejaré mis skeltons... SI TUVIERA ALGUNO */
@@ -31,7 +33,7 @@ export class DetalleViajePage implements OnInit {
 
   ionViewDidEnter(){
     this.activatedRoute.params.subscribe(params => {
-      this.vehiculo.patente = params['id'];
+      this.vehiculo.patente = params['patente'];
       const vehiculoPatente = this.vehiculosService.getVehiculoByPatente(this.vehiculo.patente);
       
       //esto es para que no de error el angular por la posibildad de que no exista el objeto deseado
@@ -45,6 +47,7 @@ export class DetalleViajePage implements OnInit {
   }
 
   Volver() {
+    this.navController.setDirection('back');
     this.router.navigateByUrl("viajes-disponibles");
   }
   

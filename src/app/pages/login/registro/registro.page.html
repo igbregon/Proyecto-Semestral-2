@@ -28,6 +28,7 @@
                                 name="nombre"
                                 placeholder=""
                                 id=""
+                                [(ngModel)]="usuario.nombre"
                                 class="w-full dark:text-white dark:placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg"
                             />
                         </div>
@@ -46,6 +47,7 @@
                                 name="apellido"
                                 placeholder=""
                                 id=""
+                                [(ngModel)]="usuario.apellido"
                                 class="w-full dark:text-white dark:placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg"
                             />
                         </div>
@@ -61,10 +63,10 @@
                         >
                             <input
                                 type="text"
-                                name="email"
+                                name="correo"
                                 placeholder=""
                                 id=""
-                                [(ngModel)]="email"
+                                [(ngModel)]="usuario.correo"
                                 class="w-full dark:text-white dark:placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg"
                             />
                         </div>
@@ -83,6 +85,7 @@
                                 name="usuario"
                                 placeholder=""
                                 id=""
+                                [(ngModel)]="usuario.nickname"
                                 class="w-full dark:text-white dark:placeholder:text-neutral-600 dark:bg-zinc-950 px-4 bg-transparent outline-none rounded-lg"
                             />
                         </div>

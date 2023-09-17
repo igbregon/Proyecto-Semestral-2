@@ -10,7 +10,7 @@ import { FuncionesService } from 'src/app/services/alertas/funciones.service';
 })
 export class InicioPage implements OnInit {
 
-  email:string = "";
+  correo:string = "";
   contrasena:string = "";
 
   constructor(
@@ -21,44 +21,21 @@ export class InicioPage implements OnInit {
   ngOnInit() {
   }
 
-/*   login(){
-    if (this.email == "") {
-      this.funcionesService.showAlert("Debe ingresar un email.","Error");
-      return;
-    }
-    if (this.contrasena == "") {
-      this.funcionesService.showAlert("Debe ingresar una contraseña.","Error");
-      return;
-    }
-    
-    if (this.email == "pgy4121-003d" && this.contrasena == "pgy4121-003d") {
-      this.funcionesService.showAlertNoButton("Validando credenciales...", "");
-
-    setTimeout(() => {
-      
-      this.funcionesService.showAlert("Bienvenido a TeLlevoAPP.", "");
-      this.router.navigateByUrl("menu");
-    }, 2000);
-    }else{
-      this.funcionesService.showAlert("Credenciales inválidas.","Error");
-    }
-    
-  } */
-
   async login(){
-    if (this.email === "" || this.contrasena === "") {
+    if (this.correo === "" || this.contrasena === "") {
       this.funcionesService.showAlert("Debe ingresar un email y una contraseña.", "ERROR");
       return;
     }
 
     try {
-      await this.auth.signInWithEmailAndPassword(this.email, this.contrasena);
+      await this.auth.signInWithEmailAndPassword(this.correo, this.contrasena);
       this.funcionesService.showAlertNoButton("Validando credenciales...", "");
 
       setTimeout(() => {
       
         this.funcionesService.showAlert("Bienvenido a TeLlevoAPP.", "");
-        this.router.navigateByUrl("menu");
+        this.router.navigateByUrl("menu/" + this.correo);
+        console.log("usuario:" + this.correo)
       }, 1000);
 
     } catch (error) {
@@ -74,7 +51,5 @@ export class InicioPage implements OnInit {
   Recuperar(){
     this.router.navigateByUrl("recuperacion");
   }
-
-  
 
 }

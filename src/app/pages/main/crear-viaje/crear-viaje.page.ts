@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { FuncionesService } from 'src/app/services/alertas/funciones.service';
 
 @Component({
@@ -11,7 +13,9 @@ export class CrearViajePage implements OnInit {
 
   constructor(
     private router: Router,
-    private funcionesService: FuncionesService) { }
+    private funcionesService: FuncionesService,
+    private navController: NavController,
+    private auth: AngularFireAuth) { }
 
   parametronumeoUno:number | undefined;
   n1: number | undefined;
@@ -22,8 +26,12 @@ export class CrearViajePage implements OnInit {
   }
 
   Inicio(){
-    this.router.navigateByUrl("menu");
-    
+    this.auth.onAuthStateChanged(user => {
+      if (user) {
+        this.navController.setDirection('back');
+        this.router.navigateByUrl('menu/' + user.email)
+      }
+    })
   }
 
   registrarVehiculo(){
