@@ -7,5 +7,5 @@ export interface Vehiculo {
     anno: number,
     patente: string,
     img: string,
-    conductor?: Usuario
+    conductor?: Usuario | null
 }

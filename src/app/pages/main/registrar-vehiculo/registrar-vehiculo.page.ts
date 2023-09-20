@@ -28,7 +28,7 @@ export class RegistrarVehiculoPage implements OnInit {
     anno: 0,
     patente: '',
     img: '',
-    conductor: this.usuario
+    conductor: null
   }
 
 
@@ -42,15 +42,26 @@ export class RegistrarVehiculoPage implements OnInit {
 
   ngOnInit() {
     this.auth.onAuthStateChanged(user => {
-      if (user) {
-        console.log('Hay usuario:', user.email)
+
+      if (user === null) {
+        return;
       }
 
-      if (user?.email) {
-        const correoUsuario = this.usuarioService.getUsuarioByCorreo(user.email);
+      if (user.email === null) {
+        return;
       }
-    })
-  }
+
+      const usuarioFound = this.usuarioService.getUsuarioByCorreo(user.email);
+      console.log('Usuario Encontrado:' + user.email);
+      if (!usuarioFound) {
+        
+        console.log('No se encontró al usuario: ' + user.email);
+        return;
+      }
+      this.vehiculo.conductor = usuarioFound;
+      console.log(this.vehiculo.conductor)
+    });
+  } 
 
   volver(){
     this.navController.back();
@@ -79,7 +90,7 @@ export class RegistrarVehiculoPage implements OnInit {
 
     try {
       this.vehiculosService.setVehiculoNuevo(this.vehiculo)
-      console.log(this.vehiculo);
+      console.table(this.vehiculo);
       this.funcionesService.showAlert("Ha sido registrado exitosamente.", "REGISTRADO");
       this.navController.back();
     } catch (error) {
