@@ -6,4 +6,4 @@ export interface Usuario {
     nickname: string,
     rut?: string,
     numeroLicencia?: string
-} 
+}

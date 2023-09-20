@@ -5,7 +5,7 @@
                 <h1 class="text-center text-white font-sans font-bold text-4xl">
                     Registrar vehículo
                 </h1>
-                <h2 
+                <h2
                 (click)="volver()"
                 class="text-center text-white font-sans font-light mt-2">
                     volver
@@ -21,6 +21,7 @@
                         >
                         <div class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg">
                             <input
+                                [(ngModel)]="vehiculo.marca"
                                 type="text"
                                 name="marca"
                                 placeholder="ingrese marca"
@@ -36,6 +37,7 @@
                         >
                         <div class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg">
                             <input
+                                [(ngModel)]="vehiculo.modelo"
                                 type="text"
                                 name="modelo"
                                 placeholder="ingrese modelo"
@@ -51,6 +53,7 @@
                         >
                         <div class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg">
                             <input
+                                [(ngModel)]="vehiculo.anno"
                                 type="text"
                                 name="anno"
                                 placeholder="Ingrese año ej: 2012"
@@ -66,6 +69,7 @@
                         >
                         <div class="flex my-3 items-center justify-between bg-zinc-100 rounded-lg">
                             <input
+                                [(ngModel)]="vehiculo.patente"
                                 type="text"
                                 name="patente"
                                 placeholder="Ingrese patente ej: HH-BB-41"
@@ -77,6 +81,7 @@
                         <div class="border h-0 w-full border-stone-300"></div>
                     </div>
                     <button
+                        (click)="registrarVehiculo()"
                         class="bg-amarillo-ppal rounded-lg shadow text-center text-white text-base font-semibold w-full py-3 mt-9"
                     >
                         Registrar

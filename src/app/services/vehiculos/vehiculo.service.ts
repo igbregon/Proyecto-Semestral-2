@@ -46,9 +46,17 @@ export class VehiculoService {
   //método temporal hasta que cree el servicio de viajes disponibles
   arrayVehiculos(){
     return this.vehiculos;
-  }
+  };
 
   getVehiculoByPatente(patente: string){
     return this.vehiculos.find(vehiculo => vehiculo.patente === patente)
+  };
+
+  setVehiculoNuevoID(){
+    return this.vehiculos.length + 1;
+  };
+
+  setVehiculoNuevo(vehiculo: Vehiculo){
+    this.vehiculos.push(vehiculo);
   };
 }
