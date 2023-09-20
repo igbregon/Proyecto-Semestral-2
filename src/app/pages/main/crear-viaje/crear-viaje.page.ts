@@ -36,7 +36,11 @@ export class CrearViajePage implements OnInit {
 
   registrarVehiculo(){
     this.router.navigateByUrl("registrar-vehiculo");
-    
+
+  }
+
+  seleccionarVehiculo(){
+    this.router.navigateByUrl("seleccionar-vehiculo")
   }
 
   calcularMultiplicacion(){

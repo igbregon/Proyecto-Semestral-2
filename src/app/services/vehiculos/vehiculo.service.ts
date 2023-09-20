@@ -1,10 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Vehiculo } from 'src/app/models/vehiculo';
+import { Usuario } from 'src/app/models/usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VehiculoService {
+
+  private conductor1 = {
+    id: 3,
+    nombre: 'Bastian',
+    apellido: 'Bonilla',
+    correo: 'ba.bonilla@duocuc.cl',
+    nickname: 'Bregon'
+  };
+
 
   private vehiculos: Vehiculo[] = [
     {
@@ -13,7 +23,8 @@ export class VehiculoService {
       modelo: '508',
       anno: 2023,
       patente: 'MG-J9-14',
-      img: 'https://img.remediosdigitales.com/4745f3/peugeot-508-2023-gris/1366_2000.jpeg'
+      img: 'https://img.remediosdigitales.com/4745f3/peugeot-508-2023-gris/1366_2000.jpeg',
+      conductor: this.conductor1
     },
     {
       id: 2,

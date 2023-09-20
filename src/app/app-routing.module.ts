@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'registrar-vehiculo',
     loadChildren: () => import('./pages/main/registrar-vehiculo/registrar-vehiculo.module').then( m => m.RegistrarVehiculoPageModule)
   },
+  {
+    path: 'seleccionar-vehiculo',
+    loadChildren: () => import('./pages/main/seleccionar-vehiculo/seleccionar-vehiculo.module').then( m => m.SeleccionarVehiculoPageModule)
+  },
 ];
 
 @NgModule({
