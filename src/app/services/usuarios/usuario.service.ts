@@ -31,6 +31,13 @@ export class UsuarioService {
       apellido: 'Bonilla',
       correo: 'ba.bonilla@duocuc.cl',
       nickname: 'Bregon'
+    },
+    {
+      id: 4,
+      nombre: 'Matias',
+      apellido: 'Abarca',
+      correo: 'mat.abarca@duocuc.cl',
+      nickname: 'Matto'
     }
   ]
 

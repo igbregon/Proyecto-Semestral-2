@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnimationController, NavController } from '@ionic/angular';
 import type { Animation } from '@ionic/angular';
@@ -20,15 +21,16 @@ export class MenuPage implements OnInit {
     apellido: '',
     correo: '',
     nickname: '',
-  } 
+  }
 
   constructor(
-    private router: Router, 
+    private router: Router,
     private navController: NavController,
     private animationCtrl: AnimationController,
     private funcionesService: FuncionesService,
     private activatedRoute:ActivatedRoute,
-    private usuarioService: UsuarioService) { }
+    private usuarioService: UsuarioService,
+    private auth: AngularFireAuth) { }
 
 
 
@@ -39,7 +41,7 @@ export class MenuPage implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.usuario.correo = params['correo'];
       const usuarioCorreo = this.usuarioService.getUsuarioByCorreo(this.usuario.correo);
-      
+
       //esto es para que no de error el angular por la posibildad de que no exista el objeto deseado
       if (usuarioCorreo !== undefined) {
         this.usuario = usuarioCorreo;
@@ -58,12 +60,13 @@ export class MenuPage implements OnInit {
       .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
       .fromTo('opacity', '1', '0.2');
   }
-  
+
 
   async Inicio(){
     //
     var confirmar = await this.funcionesService.showConfirm("Desea cerrar la sesión actual?","Confirmar","Cancelar");
     if (confirmar == true) {
+      this.auth.signOut();
       await this.router.navigateByUrl("inicio");
     }
   }
@@ -71,7 +74,7 @@ export class MenuPage implements OnInit {
   BuscarViaje(){
     this.router.navigateByUrl("viajes-disponibles");
   }
-  
+
   CrearViaje(){
     this.router.navigateByUrl("crear-viaje");
   }

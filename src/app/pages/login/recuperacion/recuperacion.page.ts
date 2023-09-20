@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-recuperacion',
@@ -8,12 +9,15 @@ import { Router } from '@angular/router';
 })
 export class RecuperacionPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private navController:NavController) { }
 
   ngOnInit() {
   }
 
   Inicio(){
+    this.navController.setDirection('back');
     this.router.navigateByUrl("inicio");
   }
 }
