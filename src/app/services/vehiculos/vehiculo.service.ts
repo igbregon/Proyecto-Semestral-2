@@ -5,6 +5,9 @@ import { Vehiculo } from 'src/app/models/vehiculo';
   providedIn: 'root'
 })
 export class VehiculoService {
+  
+  
+
 
   private vehiculos: Vehiculo[] = [
     {
@@ -40,6 +43,12 @@ export class VehiculoService {
       img: 'https://s1.cdn.autoevolution.com/images/news/gallery/tofu-delivery-1990-mazda-mx-5-has-hdmi-civic-exhaust_2.jpg'
     }
   ];
+  private autosRegistrados: any[] = [
+
+
+    
+
+  ];//Se guardaran los autos registrados
 
   constructor() { }
 
@@ -51,4 +60,21 @@ export class VehiculoService {
   getVehiculoByPatente(patente: string){
     return this.vehiculos.find(vehiculo => vehiculo.patente === patente)
   };
+
+  registrarAuto(marca: string, modelo: string,  anno: number ,patente: string, ): void {
+    const nuevoAuto = {
+      
+      marca: marca,
+      nombre: modelo,
+      anno: anno,
+      patente: patente,
+      
+
+    };
+    this.autosRegistrados.push(nuevoAuto);
+  }
+  obtenerAutos(): any[] {
+    return this.autosRegistrados;
+  }
+
 }
